@@ -1,7 +1,7 @@
 import "./index.css";
 
 const App = () => {
-  return <div>My Portfolio</div>;
+  return <div className="font-bold">My Portfolio</div>;
 };
 
 export default App;
