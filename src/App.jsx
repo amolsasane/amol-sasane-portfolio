@@ -1,7 +1,11 @@
 import "./index.css";
 
 const App = () => {
-  return <div className="font-bold">My Portfolio</div>;
+  return (
+    <>
+      <h1>Hello World</h1>
+    </>
+  );
 };
 
 export default App;
