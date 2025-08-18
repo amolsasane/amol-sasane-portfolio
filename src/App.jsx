@@ -1,9 +1,10 @@
+import WelcomePage from "./Components/welcomePage";
 import "./index.css";
 
 const App = () => {
   return (
     <>
-      <h1>Hello World</h1>
+      <WelcomePage />
     </>
   );
 };
