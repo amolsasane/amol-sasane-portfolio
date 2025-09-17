@@ -1,11 +1,11 @@
-import WelcomePage from "./Components/welcomePage";
+import WelcomePage from "./Components/WelcomePage";
 import "./index.css";
 
 const App = () => {
   return (
-    <>
+    <div className="h-screen">
       <WelcomePage />
-    </>
+    </div>
   );
 };
 
