@@ -40,12 +40,12 @@ const WelcomePage = () => {
 
   return (
     <div
-      className={`bg-[linear-gradient(178.7deg,rgba(72,75,139,1)_1.7%,rgba(27,8,58,1)_63%)] h-screen flex items-center justify-center ${
+      className={`bg-gradient-to-b from-blue-800  to-black h-screen flex items-center justify-center ${
         slideUp ? "slide-up" : ""
       }`}
     >
       <h1
-        className={`text-white text-5xl transition-opacity duration-2000 ${
+        className={`text-white text-5xl borel-regular transition-opacity duration-2000 ${
           fade ? "opacity-0 animate-fadeIn" : "opacity-100"
         }`}
       >
