@@ -4,6 +4,8 @@ const WelcomePage = () => {
   const text = ["Hello", "Hola", "Bonjour", "こんにちは", "Ciao", "नमस्ते"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(false);
+  const [slideUp, setSlideUp] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     // Slow fade-in only for the first text
@@ -11,8 +13,8 @@ const WelcomePage = () => {
       setFade(true);
       const timer = setTimeout(() => {
         setFade(false);
-        setCurrentIndex(1); // move to the next after fade-in
-      }, 2000); // slow delay for first text
+        setCurrentIndex(1);
+      }, 2000);
       return () => clearTimeout(timer);
     }
 
@@ -20,13 +22,28 @@ const WelcomePage = () => {
     if (currentIndex < text.length - 1) {
       const timer = setTimeout(() => {
         setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, 200); // fast transition
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+
+    // After last text, trigger slide-up
+    if (currentIndex === text.length - 1) {
+      const timer = setTimeout(() => {
+        setSlideUp(true); // add slide-up class
+        setTimeout(() => setHidden(true), 1000); // remove completely
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [currentIndex, text.length]);
 
+  if (hidden) return null;
+
   return (
-    <div className="bg-black h-screen flex items-center justify-center">
+    <div
+      className={`bg-black h-screen flex items-center justify-center ${
+        slideUp ? "slide-up" : ""
+      }`}
+    >
       <h1
         className={`text-white text-5xl transition-opacity duration-2000 ${
           fade ? "opacity-0 animate-fadeIn" : "opacity-100"
