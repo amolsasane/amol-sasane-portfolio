@@ -40,7 +40,7 @@ const WelcomePage = () => {
 
   return (
     <div
-      className={`bg-black h-screen flex items-center justify-center ${
+      className={`bg-[linear-gradient(178.7deg,rgba(72,75,139,1)_1.7%,rgba(27,8,58,1)_63%)] h-screen flex items-center justify-center ${
         slideUp ? "slide-up" : ""
       }`}
     >
