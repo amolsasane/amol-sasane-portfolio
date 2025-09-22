@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+.borel-regular {
+  font-family: "Borel", cursive;
+  font-weight: 400;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -25,9 +30,4 @@
 }
 .slide-up {
   animation: slideUp 0.8s ease-in-out forwards;
-}
-
-.borel-regular {
-  font-family: "Borel", cursive;
-  font-weight: 400;
 }
